@@ -12,7 +12,7 @@ public class Movie {
     private String movieName;
     private Duration duration;
     private String description;
-    private int ageRestriction;
+    private String ageRestriction;
     private String actors;
 
     public Movie() {
