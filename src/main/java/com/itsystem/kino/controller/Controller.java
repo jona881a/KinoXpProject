@@ -1,4 +1,4 @@
-package com.itsystem.kino.Controller;
+package com.itsystem.kino.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
-package com.itsystem.kino.Controller;
+package com.itsystem.kino.controller;
 
-import com.itsystem.kino.Model.Movie;
-import com.itsystem.kino.Repository.MovieRepository;
+import com.itsystem.kino.model.Movie;
+import com.itsystem.kino.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.itsystem.kino.Model;
+package com.itsystem.kino.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

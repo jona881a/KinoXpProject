@@ -1,7 +1,7 @@
-package com.itsystem.kino.Controller;
+package com.itsystem.kino.controller;
 
-import com.itsystem.kino.Model.Screening;
-import com.itsystem.kino.Repository.ScreeningRepository;
+import com.itsystem.kino.model.Screening;
+import com.itsystem.kino.repository.ScreeningRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
