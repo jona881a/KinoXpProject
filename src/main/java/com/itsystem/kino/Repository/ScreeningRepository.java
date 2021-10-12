@@ -1,4 +1,7 @@
 package com.itsystem.kino.Repository;
 
-public interface ScreeningRepository {
+import com.itsystem.kino.Model.Screening;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ScreeningRepository extends JpaRepository<Screening, Integer> {
 }
