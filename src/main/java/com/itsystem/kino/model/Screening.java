@@ -14,6 +14,10 @@ public class Screening {
     @JoinColumn(name = "roomID")
     private Room room;
 
+    @ManyToOne
+    @JoinColumn(name = "movieID")
+    private Movie movie;
+
     private String movieName;
     private Date startTime;
     private Date endTime;
@@ -43,6 +47,13 @@ public class Screening {
         this.room = room;
     }
 
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
     public String getMovieName() {
         return movieName;
     }
