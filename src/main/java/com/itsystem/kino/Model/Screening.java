@@ -9,7 +9,11 @@ public class Screening {
 
     @Id
     private int screeningID;
-    private int roomNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "roomID")
+    private Room room;
+
     private String movieName;
     private Date startTime;
     private Date endTime;
@@ -31,12 +35,12 @@ public class Screening {
         this.screeningID = screeningID;
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public String getMovieName() {
