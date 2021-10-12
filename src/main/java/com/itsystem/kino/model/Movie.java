@@ -12,7 +12,7 @@ public class Movie {
     private String movieName;
     private Duration duration;
     private String description;
-    private int ageRestriction;
+    private String ageRestriction;
     private String actors;
 
     public Movie() {
@@ -50,11 +50,11 @@ public class Movie {
         this.description = description;
     }
 
-    public int getAgeRestriction() {
+    public String getAgeRestriction() {
         return ageRestriction;
     }
 
-    public void setAgeRestriction(int ageRestriction) {
+    public void setAgeRestriction(String ageRestriction) {
         this.ageRestriction = ageRestriction;
     }
 
