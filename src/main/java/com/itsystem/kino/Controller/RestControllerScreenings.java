@@ -1,4 +1,4 @@
-package com.itsystem.kino.controller;
+package com.itsystem.kino.Controller;
 
 import com.itsystem.kino.Model.Screening;
 import com.itsystem.kino.Repository.ScreeningRepository;
@@ -14,6 +14,9 @@ public class RestControllerScreenings {
     @Autowired
     ScreeningRepository screeningRepository;
 
+    /**
+     * @return a list of all screenings when /screenings is called
+     */
     @GetMapping("/screenings")
     public List<Screening> getAllScreenings() {
         return screeningRepository.findAll();
