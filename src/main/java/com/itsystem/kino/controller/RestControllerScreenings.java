@@ -1,4 +1,4 @@
-package com.itsystem.kino.controller;
+package com.itsystem.kino.Controller;
 
 import com.itsystem.kino.Model.Screening;
 import com.itsystem.kino.Repository.ScreeningRepository;
@@ -18,4 +18,5 @@ public class RestControllerScreenings {
     public List<Screening> getAllScreenings() {
         return screeningRepository.findAll();
     }
+
 }
