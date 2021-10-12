@@ -119,7 +119,7 @@ public class Screening {
     public String toString() {
         return "Screening{" +
                 "screeningID=" + screeningID +
-                ", roomNumber=" + roomNumber +
+                ", roomNumber=" + room +
                 ", movieName='" + movieName + '\'' +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
