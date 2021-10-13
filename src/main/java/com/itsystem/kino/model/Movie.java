@@ -20,10 +20,13 @@ public class Movie {
     private String description;
     private String ageRestriction;
     private String actors;
+    private boolean isAvailable;
+
 
     @OneToMany
     @JoinColumn(name = "movieID")
     @JsonBackReference
+
     private Set<Screening> screenings = new HashSet<>();
 
     public Movie() {
@@ -85,6 +88,14 @@ public class Movie {
         this.screenings = screenings;
     }
 
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
@@ -94,6 +105,7 @@ public class Movie {
                 ", description='" + description + '\'' +
                 ", ageRestriction='" + ageRestriction + '\'' +
                 ", actors='" + actors + '\'' +
+                ", isAvailable=" + isAvailable +
                 ", screenings=" + screenings +
                 '}';
     }

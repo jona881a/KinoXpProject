@@ -1,26 +1,17 @@
 package com.itsystem.kino.model;
 
-
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Screening {
+public class History {
 
     @Id
     private int screeningID;
 
-    @ManyToOne
-    @JoinColumn(name = "roomID")
-    private Room room;
-
-    @ManyToOne
-    @JoinColumn(name = "movieID")
-    private Movie movie;
-
     @OneToOne
-    @JoinColumn(name = "historyID")
-    private History history;
+    @JoinColumn(name = "screeningID")
+    private Room room;
 
     private String movieName;
     private Date startTime;
@@ -32,8 +23,8 @@ public class Screening {
     private double percentageReserved;
     private boolean isCancelled;
 
+    public History() { }
 
-    public Screening(){}
 
     public int getScreeningID() {
         return screeningID;
@@ -49,22 +40,6 @@ public class Screening {
 
     public void setRoom(Room room) {
         this.room = room;
-    }
-
-    public Movie getMovie() {
-        return movie;
-    }
-
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
-
-    public History getHistory() {
-        return history;
-    }
-
-    public void setHistory(History history) {
-        this.history = history;
     }
 
     public String getMovieName() {
@@ -141,11 +116,9 @@ public class Screening {
 
     @Override
     public String toString() {
-        return "Screening{" +
+        return "History{" +
                 "screeningID=" + screeningID +
                 ", room=" + room +
-                ", movie=" + movie +
-                ", history=" + history +
                 ", movieName='" + movieName + '\'' +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +

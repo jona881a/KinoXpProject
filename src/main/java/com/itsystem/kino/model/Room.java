@@ -11,14 +11,17 @@ import java.util.Set;
 
 @Entity
 public class Room {
+
     @Id
     private int roomID;
-    private String row;
+    private String seatRow;
     private int seat;
 
     @OneToMany
     @JoinColumn(name = "roomID")
     @JsonBackReference
+
+
     private Set<Screening> screenings = new HashSet<>();
 
     public Room() {
@@ -32,12 +35,12 @@ public class Room {
         this.roomID = roomID;
     }
 
-    public String getRow() {
-        return row;
+    public String getSeatRow() {
+        return seatRow;
     }
 
-    public void setRow(String row) {
-        this.row = row;
+    public void setSeatRow(String row) {
+        this.seatRow = row;
     }
 
     public int getSeat() {
@@ -60,7 +63,7 @@ public class Room {
     public String toString() {
         return "Room{" +
                 "roomID=" + roomID +
-                ", row='" + row + '\'' +
+                ", row='" + seatRow + '\'' +
                 ", seat=" + seat +
                 ", screenings=" + screenings +
                 '}';
