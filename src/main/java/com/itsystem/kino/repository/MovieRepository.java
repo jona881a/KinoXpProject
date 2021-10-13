@@ -9,5 +9,7 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
     List<Movie> getMoviesByMovieID(Integer movieID);
 
+    List<Movie> getMoviesByMovieIDAndIsAvailable(Integer movieID,);
+
 
 }

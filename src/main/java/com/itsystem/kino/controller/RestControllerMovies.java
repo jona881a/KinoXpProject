@@ -20,12 +20,13 @@ public class RestControllerMovies {
      */
     @GetMapping("/movies")
     public List<Movie> getMoviesByMovieID() {
-        return movieRepository.findAll();
+        if (movieRepository.findAll() == )
+        return              //movieRepository.getMoviesByMovieID();
     }
 
-    @GetMapping("/movies_unavailable")
-    public List<Movie> getAllUnavailableMovies() {
-        return movieRepository.findAll();
+    @GetMapping("/movies_isCanceled")
+    public List<Movie> getMoviesByMovieIDAndIsAvailable() {
+        return movieRepository.getMoviesByMovieIDAndIsAvailable();
     }
 
 
