@@ -2,10 +2,8 @@ package com.itsystem.kino.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.sql.Time;
 import java.time.Duration;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,12 +14,11 @@ public class Movie {
     @Id
     private int movieID;
     private String movieName;
-    private Duration duration;
+    private Time duration;
     private String description;
     private String ageRestriction;
     private String actors;
     private boolean isAvailable;
-
 
     @OneToMany
     @JoinColumn(name = "movieID")
@@ -48,11 +45,11 @@ public class Movie {
         this.movieName = movieName;
     }
 
-    public Duration getDuration() {
+    public Time getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(Time duration) {
         this.duration = duration;
     }
 

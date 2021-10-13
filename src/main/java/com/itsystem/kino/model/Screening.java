@@ -32,7 +32,6 @@ public class Screening {
     private double percentageReserved;
     private boolean isCancelled;
 
-
     public Screening(){}
 
     public int getScreeningID() {
