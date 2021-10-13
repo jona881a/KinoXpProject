@@ -18,6 +18,10 @@ public class Screening {
     @JoinColumn(name = "movieID")
     private Movie movie;
 
+    @OneToOne
+    @JoinColumn(name = "historyID")
+    private History history;
+
     private String movieName;
     private Date startTime;
     private Date endTime;
@@ -54,6 +58,15 @@ public class Screening {
     public void setMovie(Movie movie) {
         this.movie = movie;
     }
+
+    public History getHistory() {
+        return history;
+    }
+
+    public void setHistory(History history) {
+        this.history = history;
+    }
+
     public String getMovieName() {
         return movieName;
     }
@@ -130,7 +143,9 @@ public class Screening {
     public String toString() {
         return "Screening{" +
                 "screeningID=" + screeningID +
-                ", roomNumber=" + room +
+                ", room=" + room +
+                ", movie=" + movie +
+                ", history=" + history +
                 ", movieName='" + movieName + '\'' +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
