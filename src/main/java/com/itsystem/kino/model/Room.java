@@ -11,9 +11,10 @@ import java.util.Set;
 
 @Entity
 public class Room {
+
     @Id
     private int roomID;
-    private String row;
+    private String roomRow;
     private int seat;
 
     @OneToMany
@@ -32,12 +33,12 @@ public class Room {
         this.roomID = roomID;
     }
 
-    public String getRow() {
-        return row;
+    public String getRoomRow() {
+        return roomRow;
     }
 
-    public void setRow(String row) {
-        this.row = row;
+    public void setRoomRow(String row) {
+        this.roomRow = row;
     }
 
     public int getSeat() {
@@ -60,7 +61,7 @@ public class Room {
     public String toString() {
         return "Room{" +
                 "roomID=" + roomID +
-                ", row='" + row + '\'' +
+                ", row='" + roomRow + '\'' +
                 ", seat=" + seat +
                 ", screenings=" + screenings +
                 '}';
