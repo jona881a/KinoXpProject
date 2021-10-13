@@ -14,7 +14,7 @@ public class Room {
 
     @Id
     private int roomID;
-    private String roomRow;
+    private String seatRow;
     private int seat;
 
     @OneToMany
@@ -33,12 +33,12 @@ public class Room {
         this.roomID = roomID;
     }
 
-    public String getRoomRow() {
-        return roomRow;
+    public String getSeatRow() {
+        return seatRow;
     }
 
-    public void setRoomRow(String row) {
-        this.roomRow = row;
+    public void setSeatRow(String row) {
+        this.seatRow = row;
     }
 
     public int getSeat() {
@@ -61,7 +61,7 @@ public class Room {
     public String toString() {
         return "Room{" +
                 "roomID=" + roomID +
-                ", row='" + roomRow + '\'' +
+                ", row='" + seatRow + '\'' +
                 ", seat=" + seat +
                 ", screenings=" + screenings +
                 '}';
