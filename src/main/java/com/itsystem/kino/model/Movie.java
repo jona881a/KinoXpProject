@@ -1,8 +1,14 @@
 package com.itsystem.kino.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import java.time.Duration;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Movie {
@@ -14,6 +20,11 @@ public class Movie {
     private String description;
     private String ageRestriction;
     private String actors;
+
+    @OneToMany
+    @JoinColumn(name = "movieID")
+    @JsonBackReference
+    private Set<Screening> screenings = new HashSet<>();
 
     public Movie() {
     }
@@ -66,6 +77,13 @@ public class Movie {
         this.actors = actors;
     }
 
+    public Set<Screening> getScreenings() {
+        return screenings;
+    }
+
+    public void setScreenings(Set<Screening> screenings) {
+        this.screenings = screenings;
+    }
 
     @Override
     public String toString() {
@@ -74,8 +92,9 @@ public class Movie {
                 ", movieName='" + movieName + '\'' +
                 ", duration=" + duration +
                 ", description='" + description + '\'' +
-                ", ageRestriction=" + ageRestriction +
+                ", ageRestriction='" + ageRestriction + '\'' +
                 ", actors='" + actors + '\'' +
+                ", screenings=" + screenings +
                 '}';
     }
 }

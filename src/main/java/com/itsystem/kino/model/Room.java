@@ -1,7 +1,13 @@
 package com.itsystem.kino.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Room {
@@ -10,6 +16,10 @@ public class Room {
     private String row;
     private int seat;
 
+    @OneToMany
+    @JoinColumn(name = "roomID")
+    @JsonBackReference
+    private Set<Screening> screenings = new HashSet<>();
 
     public Room() {
     }
@@ -38,12 +48,21 @@ public class Room {
         this.seat = seat;
     }
 
+    public Set<Screening> getScreenings() {
+        return screenings;
+    }
+
+    public void setScreenings(Set<Screening> screenings) {
+        this.screenings = screenings;
+    }
+
     @Override
     public String toString() {
         return "Room{" +
                 "roomID=" + roomID +
                 ", row='" + row + '\'' +
                 ", seat=" + seat +
+                ", screenings=" + screenings +
                 '}';
     }
 }
