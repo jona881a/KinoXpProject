@@ -3,8 +3,9 @@ package com.itsystem.kino.controller;
 import com.itsystem.kino.model.Movie;
 import com.itsystem.kino.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +19,14 @@ public class RestControllerMovies {
      * @return a list of movies when the /movie is called
      */
     @GetMapping("/movies")
-    public List<Movie> getAllMovies() {
+    public List<Movie> getMoviesByMovieID() {
         return movieRepository.findAll();
     }
+
+    @GetMapping("/movies_unavailable")
+    public List<Movie> getAllUnavailableMovies() {
+        return movieRepository.findAll();
+    }
+
+
 }
