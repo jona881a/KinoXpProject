@@ -21,9 +21,11 @@ public class Movie {
     private String ageRestriction;
     private String actors;
 
+
     @OneToMany
     @JoinColumn(name = "movieID")
     @JsonBackReference
+
     private Set<Screening> screenings = new HashSet<>();
 
     public Movie() {

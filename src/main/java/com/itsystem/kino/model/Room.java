@@ -20,6 +20,8 @@ public class Room {
     @OneToMany
     @JoinColumn(name = "roomID")
     @JsonBackReference
+
+
     private Set<Screening> screenings = new HashSet<>();
 
     public Room() {
