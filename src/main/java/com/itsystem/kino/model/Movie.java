@@ -12,6 +12,7 @@ import java.util.Set;
 public class Movie {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieID;
     private String movieName;
     private Time duration;
@@ -25,6 +26,7 @@ public class Movie {
     @JsonBackReference
 
     private Set<Screening> screenings = new HashSet<>();
+
 
     public Movie() {
     }

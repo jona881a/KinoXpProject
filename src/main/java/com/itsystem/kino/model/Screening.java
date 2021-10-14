@@ -8,6 +8,7 @@ import java.util.Date;
 public class Screening {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int screeningID;
 
     @ManyToOne
