@@ -3,9 +3,7 @@ package com.itsystem.kino.controller;
 import com.itsystem.kino.model.Screening;
 import com.itsystem.kino.repository.ScreeningRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,4 +22,8 @@ public class RestControllerScreenings {
         return screeningRepository.findAll();
     }
 
+    @PostMapping("/screeningsCreate")
+    public Screening screeningsCreate(@ModelAttribute Screening screening) {
+        return screeningRepository.save(screening);
+    }
 }
