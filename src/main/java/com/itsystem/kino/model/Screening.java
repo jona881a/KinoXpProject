@@ -104,7 +104,7 @@ public class Screening {
     }
 
     public void setAgeRestriction(String ageRestriction) {
-        ageRestriction = ageRestriction;
+        this.ageRestriction = ageRestriction;
     }
 
     public int getReservedSeats() {
