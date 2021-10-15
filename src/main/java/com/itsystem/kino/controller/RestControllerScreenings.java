@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin")
+@CrossOrigin("*")
 @RestController
 public class RestControllerScreenings {
 
