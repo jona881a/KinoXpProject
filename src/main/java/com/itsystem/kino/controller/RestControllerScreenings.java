@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin. *")
+@CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin")
 @RestController
 public class RestControllerScreenings {
 
@@ -24,17 +24,11 @@ public class RestControllerScreenings {
         return screeningRepository.findAll();
     }
 
-    @PostMapping("/screeningsCreate")
-    public Screening screeningsCreate(@ModelAttribute Screening screening) {
-        return screeningRepository.save(screening);
-    }
-    /*
-    @PostMapping(value="/region",consumes = "application/json")
-    public ResponseEntity<Region> createRegion(@RequestBody Region region) {
-        regionRepository.save(region);
+    @PostMapping(value="/screeningsCreate",consumes = "application/json")
+    public ResponseEntity<Screening> createScreening(@RequestBody Screening screening) {
+        screeningRepository.save(screening);
 
-        return new ResponseEntity<Region>(region, HttpStatus.CREATED);
+        return new ResponseEntity<Screening>(screening, HttpStatus.CREATED);
     }
 
-     */
 }
