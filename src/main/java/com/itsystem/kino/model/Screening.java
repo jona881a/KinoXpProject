@@ -27,7 +27,7 @@ public class Screening {
     private Date startTime;
     private Date endTime;
     private double seatPrice;
-    private int AgeRestriction;
+    private int ageRestriction;
     private int reservedSeats;
     private int availableSeats;
     private double percentageReserved;
@@ -100,11 +100,11 @@ public class Screening {
     }
 
     public int getAgeRestriction() {
-        return AgeRestriction;
+        return ageRestriction;
     }
 
     public void setAgeRestriction(int ageRestriction) {
-        AgeRestriction = ageRestriction;
+        ageRestriction = ageRestriction;
     }
 
     public int getReservedSeats() {
@@ -150,7 +150,7 @@ public class Screening {
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 ", seatPrice=" + seatPrice +
-                ", AgeRestriction=" + AgeRestriction +
+                ", AgeRestriction=" + ageRestriction +
                 ", reservedSeats=" + reservedSeats +
                 ", availableSeats=" + availableSeats +
                 ", percentageReserved=" + percentageReserved +
