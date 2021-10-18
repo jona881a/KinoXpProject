@@ -1,8 +1,12 @@
 package com.itsystem.kino.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Screening {
@@ -22,6 +26,11 @@ public class Screening {
     @OneToOne
     @JoinColumn(name = "historyID")
     private History history;
+
+    @OneToMany
+    @JoinColumn(name = "screeningID")
+    @JsonBackReference
+    private Set<Ticket> tickets = new HashSet<>();
 
     private String movieName;
     private Date startTime;
@@ -156,5 +165,13 @@ public class Screening {
                 ", percentageReserved=" + percentageReserved +
                 ", isCancelled=" + isCancelled +
                 '}';
+    }
+
+    public Set<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(Set<Ticket> tickets) {
+        this.tickets = tickets;
     }
 }
