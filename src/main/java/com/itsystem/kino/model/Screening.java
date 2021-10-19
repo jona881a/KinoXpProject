@@ -32,6 +32,11 @@ public class Screening {
     @JsonBackReference
     private Set<Ticket> tickets = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name= "employeeID")
+    private Employee employee;
+
+
     private String movieName;
     private Date startTime;
     private Date endTime;
