@@ -45,7 +45,7 @@ public class Screening {
     private int reservedSeats;
     private int availableSeats;
     private double percentageReserved;
-    private boolean isCancelled;
+
 
     public Screening(){}
 
@@ -145,13 +145,7 @@ public class Screening {
         this.percentageReserved = percentageReserved;
     }
 
-    public boolean isCancelled() {
-        return isCancelled;
-    }
 
-    public void setCancelled(boolean cancelled) {
-        isCancelled = cancelled;
-    }
 
     @Override
     public String toString() {
@@ -168,7 +162,6 @@ public class Screening {
                 ", reservedSeats=" + reservedSeats +
                 ", availableSeats=" + availableSeats +
                 ", percentageReserved=" + percentageReserved +
-                ", isCancelled=" + isCancelled +
                 '}';
     }
 
