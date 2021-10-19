@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
@@ -39,13 +40,6 @@ public class RestControllerScreenings {
         return newScreenings;
     }
 
-    /*
-    @GetMapping("/screenings")
-    public List<Screening> getAllScreenings() {
-
-        return screeningRepository.findAll();
-    }*/
-
     @PostMapping(value="/screeningsCreate",consumes = "application/json")
     public ResponseEntity<Screening> createScreening(@RequestBody Screening screening) {
         screeningRepository.save(screening);
@@ -53,4 +47,21 @@ public class RestControllerScreenings {
         return new ResponseEntity<Screening>(screening, HttpStatus.CREATED);
     }
 
+    @GetMapping("/screenings/{screeningID}")
+    public Screening getKommune(@PathVariable int screeningID) {
+        Optional<Screening> screeningObj = screeningRepository.findById(screeningID);
+        if (screeningObj.isPresent()) {
+            return screeningObj.get();
+        }
+        Screening screening= new Screening();
+        screening.setScreeningID(-1);
+        return screening;
+    }
+    @PutMapping("/screenings/{screeningID}")
+    public ResponseEntity<Screening> updateScreening(@PathVariable int screeningID, @RequestBody Screening screening){
+        var screeningObj = screeningRepository.findById(screeningID);
+
+        screeningRepository.save(screening);
+        return new ResponseEntity<>(screening, HttpStatus.OK);
+    }
 }
