@@ -4,6 +4,7 @@ import com.itsystem.kino.model.Movie;
 import com.itsystem.kino.model.Room;
 import com.itsystem.kino.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,13 +26,14 @@ public class RestControllerMovies {
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
     }
-
-    @PostMapping(value="/moviesCreate", consumes = "application/json")
+    @PostMapping(value="/moviesCreate", consumes="application/json")
     public ResponseEntity<Movie> createMovie(@RequestBody Movie movie){
         System.out.println("ind i Controller");
         movieRepository.save(movie);
         return new ResponseEntity<Movie>(movie, HttpStatus.CREATED);
     }
+
+
 
     /*
     @GetMapping("/movies")
